@@ -1,16 +1,31 @@
-# llm_stethoscope
+# LLM Stethoscope 🩺
 
-A new Flutter project.
+An AI diagnostic tool that converts acoustic respiratory sounds into audio spectrograms to classify lung conditions using Vision Transformers.
 
-## Getting Started
+## Overview
+Respiratory sound analysis is often limited by background noise and subjective evaluation. The LLM Stethoscope processes real-time chest auscultation audio, converts raw signals into high-density spectrograms, and feeds them into a fine-tuned Vision Transformer (ViT) to assist in preliminary diagnostic feedback.
 
-This project is a starting point for a Flutter application.
+## What It Does
+- **Signal Processing:** Filters ambient interference and converts continuous audio into structured spectrograms using Librosa.
+- **Pattern Classification:** Applies Vision Transformer architectures to identify acoustic anomalies in pulmonary audio.
+- **Noise Reduction:** Implements custom digital signal processing filters to clean audio feeds before inference.
+- **Fast Feedback:** Keeps inference latency under 150ms for near-real-time clinical support.
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
+- **Language:** Python
+- **ML / Deep Learning:** PyTorch, Torchvision, Hugging Face
+- **Audio Processing:** Librosa, SciPy, NumPy
+- **Deployment:** Docker, FastAPI
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Quickstart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+# Clone the repository
+git clone [https://github.com/HarshitCyril/LLM-Stethoscope.git](https://github.com/HarshitCyril/LLM-Stethoscope.git)
+cd LLM-Stethoscope
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run inference on a sample audio file
+python main.py --input sample_audio.wav
